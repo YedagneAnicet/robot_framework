@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.10.11 on win32)" generated="20230512 17:51:45.797" rpa="false" schemaversion="3">
+<suite id="s1" name="Ouvrirgoole" source="C:\maa_code\robot\tests\ouvrirgoole.robot">
+<test id="s1-t1" name="Connexion Facebook" line="17">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.facebook.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230512 17:51:46.144" level="INFO">Opening browser 'chrome' to base url 'https://www.facebook.com'.</msg>
+<msg timestamp="20230512 17:51:46.154" level="INFO">Applicable driver not found; attempting to install with Selenium Manager (Beta)</msg>
+<status status="PASS" starttime="20230512 17:51:46.143" endtime="20230512 17:51:49.532"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:email</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230512 17:51:49.533" level="INFO">Typing text 'yedagneanicet@gmail.com' into text field 'name:email'.</msg>
+<status status="PASS" starttime="20230512 17:51:49.533" endtime="20230512 17:51:49.608"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>name:pass</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230512 17:51:49.609" level="INFO">Typing password into text field 'name:pass'.</msg>
+<msg timestamp="20230512 17:51:49.635" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230512 17:51:49.683" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230512 17:51:49.609" endtime="20230512 17:51:49.684"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>name:login</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230512 17:51:49.684" level="INFO">Clicking element 'name:login'.</msg>
+<status status="PASS" starttime="20230512 17:51:49.684" endtime="20230512 17:51:49.764"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5min</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230512 17:56:49.768" level="INFO">Slept 5 minutes</msg>
+<status status="PASS" starttime="20230512 17:51:49.765" endtime="20230512 17:56:49.768"/>
+</kw>
+<status status="PASS" starttime="20230512 17:51:46.138" endtime="20230512 17:56:49.768"/>
+</test>
+<test id="s1-t2" name="Liker tous les elements" line="24">
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<msg timestamp="20230512 17:56:49.768" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=113.0.5672.93)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00568893+48451]
+	(No symbol) [0x004FB8A1]
+	(No symbol) [0x00405058]
+	(No symbol) [0x003ED073]
+	(No symbol) [0x0044DEBB]
+	(No symbol) [0x0045BFD3]
+	(No symbol) [0x0044A0B6]
+	(No symbol) [0x00427E08]
+	(No symbol) [0x00428F2D]
+	GetHandleVerifier [0x007C8E3A+2540266]
+	GetHandleVerifier [0x00808959+2801161]
+	GetHandleVerifier [0x0080295C+2776588]
+	GetHandleVerifier [0x005F2280+612144]
+	(No symbol) [0x00504F6C]
+	(No symbol) [0x005011D8]
+	(No symbol) [0x005012BB]
+	(No symbol) [0x004F4857]
+	BaseThreadInitThunk [0x76B600C9+25]
+	RtlGetAppContainerNamedObjectPath [0x77417B4E+286]
+	RtlGetAppContainerNamedObjectPath [0x77417B1E+238]
+</msg>
+<msg timestamp="20230512 17:56:49.768" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=113.0.5672.93)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00568893+48451]
+	(No symbol) [0x004FB8A1]
+	(No symbol) [0x00405058]
+	(No symbol) [0x003ED073]
+	(No symbol) [0x0044DEBB]
+	(No symbol) [0x0045BFD3]
+	(No symbol) [0x0044A0B6]
+	(No symbol) [0x00427E08]
+	(No symbol) [0x00428F2D]
+	GetHandleVerifier [0x007C8E3A+2540266]
+	GetHandleVerifier [0x00808959+2801161]
+	GetHandleVerifier [0x0080295C+2776588]
+	GetHandleVerifier [0x005F2280+612144]
+	(No symbol) [0x00504F6C]
+	(No symbol) [0x005011D8]
+	(No symbol) [0x005012BB]
+	(No symbol) [0x004F4857]
+	BaseThreadInitThunk [0x76B600C9+25]
+	RtlGetAppContainerNamedObjectPath [0x77417B4E+286]
+	RtlGetAppContainerNamedObjectPath [0x77417B1E+238]
+</msg>
+<status status="FAIL" starttime="20230512 17:56:49.768" endtime="20230512 17:56:49.768"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>xpath=//ul[@class='liste']/li[1]/a</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20230512 17:56:49.768" endtime="20230512 17:56:49.768"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${elements}</var>
+<arg>xpath=//ul[@class='liste']/li/a</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="NOT RUN" starttime="20230512 17:56:49.768" endtime="20230512 17:56:49.768"/>
+</kw>
+<for flavor="IN">
+<var>${element}</var>
+<value>@{elements}</value>
+<iter>
+<var name="${element}"/>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230512 17:56:49.768" endtime="20230512 17:56:49.768"/>
+</kw>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<arg>xpath=//span[@class='like-button']/a</arg>
+<arg>Unlike</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="NOT RUN" starttime="20230512 17:56:49.768" endtime="20230512 17:56:49.768"/>
+</kw>
+<status status="NOT RUN" starttime="20230512 17:56:49.768" endtime="20230512 17:56:49.768"/>
+</iter>
+<status status="NOT RUN" starttime="20230512 17:56:49.768" endtime="20230512 17:56:49.768"/>
+</for>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20230512 17:56:49.768" endtime="20230512 17:56:49.768"/>
+</kw>
+<status status="FAIL" starttime="20230512 17:56:49.768" endtime="20230512 17:56:49.768">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=113.0.5672.93)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00568893+48451]
+	(No symbol) [0x004FB8A1]
+	(No symbol) [0x00405058]
+	(No symbol) [0x003ED073]
+	(No symbol) [0x0044DEBB]
+	(No symbol) [0x0045BFD3]
+	(No symbol) [0x0044A0B6]
+	(No symbol) [0x00427E08]
+	(No symbol) [0x00428F2D]
+	GetHandleVerifier [0x007C8E3A+2540266]
+	GetHandleVerifier [0x00808959+2801161]
+	GetHandleVerifier [0x0080295C+2776588]
+	GetHandleVerifier [0x005F2280+612144]
+	(No symbol) [0x00504F6C]
+	(No symbol) [0x005011D8]
+	(No symbol) [0x005012BB]
+	(No symbol) [0x004F4857]
+	BaseThreadInitThunk [0x76B600C9+25]
+	RtlGetAppContainerNamedObjectPath [0x77417B4E+286]
+	RtlGetAppContainerNamedObjectPath [0x77417B1E+238]
+</status>
+</test>
+<status status="FAIL" starttime="20230512 17:51:45.810" endtime="20230512 17:56:49.768"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="1" skip="0" id="s1" name="Ouvrirgoole">Ouvrirgoole</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230512 17:56:49.768" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=113.0.5672.93)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00568893+48451]
+	(No symbol) [0x004FB8A1]
+	(No symbol) [0x00405058]
+	(No symbol) [0x003ED073]
+	(No symbol) [0x0044DEBB]
+	(No symbol) [0x0045BFD3]
+	(No symbol) [0x0044A0B6]
+	(No symbol) [0x00427E08]
+	(No symbol) [0x00428F2D]
+	GetHandleVerifier [0x007C8E3A+2540266]
+	GetHandleVerifier [0x00808959+2801161]
+	GetHandleVerifier [0x0080295C+2776588]
+	GetHandleVerifier [0x005F2280+612144]
+	(No symbol) [0x00504F6C]
+	(No symbol) [0x005011D8]
+	(No symbol) [0x005012BB]
+	(No symbol) [0x004F4857]
+	BaseThreadInitThunk [0x76B600C9+25]
+	RtlGetAppContainerNamedObjectPath [0x77417B4E+286]
+	RtlGetAppContainerNamedObjectPath [0x77417B1E+238]
+</msg>
+</errors>
+</robot>
